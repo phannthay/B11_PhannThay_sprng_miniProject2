@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorator="/shared/layout">
+<head>
+<meta charset="ISO-8859-1">
+<title>User from database</title>
+<style>
+table,tr,th{
+	border:1px solid black;
+	text-align:center;
+}
+td{
+	color:black;
+	border:1px solid black;
+}
+
+</style>
+</head>
+<body>
+<div layout:fragment="content">
+<div class="content">
+
+ <div class="row presentation">
+
+    <div class="col-lg-8 col-ms-6 titles" style="width:1000px;">
+      	<table style="border:1px solid ;">
+      		<tr style="color:black;">
+      			<th style="width:100px;">ID</th>
+      			<th style="width:200px;">Name</th>
+      			<th style="width:250px;">Email</th>
+      			<th style="width:100px;">Gender</th>
+      			<th style="width:100px;">PhoneNumber</th>
+      			<th style="width:100px;">Status</th>
+      			<th style="width:250px;">User_Hash</th>		
+      		</tr>
+      		
+      		<tr th:each="st:${user}">
+      		<td th:text="${st.id}"></td>
+      		<td th:text="${st.username}"></td>
+      		<td th:text="${st.email}"></td>
+      		<td th:text="${st.gender}"></td>
+      		<td th:text="${st.phonenumber}"></td>
+      		<td th:text="${st.status}"></td>
+      		<td th:text="${st.user_hash}"></td>
+      		
+      		</tr>
+      	</table>
+         </div>
+  </div>
+  </div>
+  </div>
+</body>
+</html>
